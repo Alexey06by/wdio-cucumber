@@ -1,7 +1,9 @@
 Feature: News of Alfabank
 
-Scenario: As a user I can see news
+    @news
+    Scenario: As a user I can see news
 
-    Given I am on main page
-    When I click on a news article
-    Then I see the article
+        Given I am on main page
+        When I accept cookies
+        And Click on a news article
+        Then I see the article
