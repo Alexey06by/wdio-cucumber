@@ -14,8 +14,9 @@ When("Click on a news article", async() => {
 });
 
 Then("I see the article", async() => {
-    const isArticleVisible = await PageFactory.newsArticlePage().isArticleVisible();
+    const article = await PageFactory.newsArticlePage().getArticle();
     console.log(isArticleVisible);
+    await expect(article).toBeDisplayed();
     // await expect(isArticleVisible).toHaveValue('true');
 })
 
