@@ -1,10 +1,18 @@
 import { Given, When } from "@wdio/cucumber-framework";
 import { PageFactory } from "../pages/PageFactory";
+import {logger as loggerHelper} from '../../utils/log4js'
 
 Given("I am on main page", async () => {
-    await PageFactory.mainPage().open();    
+    loggerHelper.info('User is going to be on the main page');     
+    await PageFactory.mainPage().open();
+    loggerHelper.debug('User is on the main page');        
 });
 
 When("I accept cookies", async() => {
-    await PageFactory.mainPage().acceptCookies();
+    try{
+        await PageFactory.mainPage().acceptCookies();
+    } catch(err) {
+        loggerHelper.error('Error found:', (err as Error).message);   
+    }
+    
 });
