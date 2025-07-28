@@ -6,7 +6,7 @@ let articleTitle: string;
 
 When("Click on a news article", async() => {
     try{
-        loggerHelper.debug('I am going to save article title to articleTitle variable');          
+        loggerHelper.debug('Article title is going to be saved to articleTitle variable');          
         articleTitle = await PageFactory.mainPage().getArticleTitle();
         loggerHelper.info('Article title is saved to articleTitle variable');   
         loggerHelper.silly('Test');   
